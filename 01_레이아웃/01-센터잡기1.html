@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/css/normalize.css"/>
+    <style>
+
+        /* 기본 설정 */
+        /* 중앙정렬할 박스의 부모로 기본 설정입니다. */
+        .body-center {
+            width: 100%;
+            height: 500px;
+            background: yellow;
+        }
+
+        /* 가로정렬 박스의 기본 설정 */
+        .box-horizontal-center {
+            width: 300px;
+            border: 1px solid red;
+            background: white;
+        }
+
+
+        /* 센터 잡기-1 */
+        /* 센터를 잡기위한 부모의 설정입니다. */
+        .body-center {
+            display: table; /* 부모의 display를 block에서 table로 변경합니다. */
+            height: 500px; /* display: table방식은 부모의 높이가 고정되어있어야 합니다. */
+        }
+
+        /* display : table-cell 의 속성은 부모의 display: table;안에서 vertical-align의 속성으로 상중하 세로정렬을 할수있게 합니다. */
+        .box-vertical-center {
+            display: table-cell; /* 테이블 속성의 자식 설정 */
+            vertical-align: middle; /* 중앙 정렬 */
+        }
+
+        /* 마진의 left와 right를 auto로 하여 가로 중앙 정렬을 합니다. */
+        .box-horizontal-center {
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>가로는 display: table;과 display: table-cell;을 사용하여 vertical-align로 정렬하고, 세로는 마진 좌/우 auto를 통해 정렬한다. </p>
+    <p>IE8 이상부터 사용가능</p>
+</div>
+<div class="body-center">
+    <div class="box-vertical-center">
+        <div class="box-horizontal-center">
+            <h1>센터입니다.</h1>
+
+            <p>센터입니다.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
